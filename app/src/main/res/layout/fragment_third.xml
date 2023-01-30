@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="practiceViewModel"
+            type="com.example.utb_project_wim.screens.practice.PracticeViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4CAF50"
+        tools:context=".screens.practice.ThirdFragment">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutHorizontal2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@+id/practiceHint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/roundLabel"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:labelFor="@id/rounds"
+                android:text="@string/round"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/practiceHint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/rounds"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:text="@{practiceViewModel.round}"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/practiceHint"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/hold"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@{practiceViewModel.holt}"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/home_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/practiceHint" />
+
+        <TextView
+            android:id="@+id/practiceHint"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="@{practiceViewModel.hint}"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/home_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <Button
+            android:id="@+id/home_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

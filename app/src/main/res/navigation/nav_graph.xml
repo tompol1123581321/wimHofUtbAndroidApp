@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.utb_project_wim.screens.home.FirstFragment"
+        android:label="WimHoF"
+        tools:layout="@layout/fragment_first">
+
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+        <action
+            android:id="@+id/action_FirstFragment_to_ThirdFragment"
+            app:destination="@id/ThirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.example.utb_project_wim.screens.settings.SecondFragment"
+        android:label="Setting up"
+        tools:layout="@layout/fragment_second">
+
+        <action
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <action
+            android:id="@+id/action_SecondFragment_to_ThirdFragment"
+            app:destination="@id/ThirdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ThirdFragment"
+        android:name="com.example.utb_project_wim.screens.practice.ThirdFragment"
+        android:label="Practice"
+        tools:layout="@layout/fragment_third">
+
+        <action
+            android:id="@+id/action_ThirdFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment" />
+        <argument
+            android:name="breaths"
+            app:argType="integer"
+            android:defaultValue="30" />
+        <argument
+            android:name="rounds"
+            app:argType="integer"
+            android:defaultValue="3" />
+        <argument
+            android:name="secsToHold"
+            app:argType="integer"
+            android:defaultValue="30" />
+    </fragment>
+</navigation>

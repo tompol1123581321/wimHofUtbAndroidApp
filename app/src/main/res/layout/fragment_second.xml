@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable
+            name="settingsViewModel"
+            type="com.example.utb_project_wim.screens.settings.SettingsViewModel" />
+
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4CAF50"
+    tools:context=".screens.settings.SecondFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/editTextTextPersonName2"
+            android:text="@string/name" />
+
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@={settingsViewModel._name}"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/editTextNumber"
+            android:text="@string/number_of_rounds" />
+
+        <EditText
+            android:id="@+id/editTextNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="number"
+            android:text="@={settingsViewModel._round}"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/label2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/editTextNumber2"
+            android:text="@string/number_of_breaths" />
+
+        <EditText
+            android:id="@+id/editTextNumber2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="number"
+            android:text="@={settingsViewModel._breaths}"
+            tools:ignore="LabelFor" />
+
+        <TextView
+            android:id="@+id/label3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:labelFor="@id/editTextNumber3"
+            android:text="@string/seconds_to_hold" />
+
+        <EditText
+            android:id="@+id/editTextNumber3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:inputType="number"
+            android:text="@={settingsViewModel._holt}"
+            tools:ignore="LabelFor" />
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayoutHorizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button_second"
+            style="?android:attr/action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+
+            android:id="@+id/go_to_third"
+            style="?android:attr/action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/start"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.789"
+            android:onClick="@{()->settingsViewModel.onGo()}"
+            app:layout_constraintStart_toStartOf="parent" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
